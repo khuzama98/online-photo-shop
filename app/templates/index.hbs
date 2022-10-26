@@ -1,0 +1,23 @@
+<CartContainer>
+
+  <div class="container">
+    <div class="body">
+      <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-3">
+        {{#each this.model.data as |product|}}
+          <Thumbnail @product={{product}} />
+        {{/each}}
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-buttons-container">
+    {{#each-in this.model.links as |key value|}}
+      <LinkTo @route="index" @query={{hash page=value.page}}>
+        <button class="m-2 nav-buttons">
+          {{key}}
+        </button>
+      </LinkTo>
+    {{/each-in}}
+  </div>
+
+</CartContainer>

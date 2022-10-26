@@ -1,0 +1,14 @@
+<div class="product">
+  <Product::Image
+    src="https://picsum.photos/id/{{@product.id}}/300"
+    @isDetails={{@isDetails}}
+    @zoom={{this.zoom}}
+  />
+  <Product::Details
+    @isDetails={{@isDetails}}
+    @product={{@product}}
+    @res={{this.res}}
+    @price={{this.price}}
+    @resChanged={{this.updateRes}}
+  />
+</div>

@@ -1,0 +1,21 @@
+.thumbnail {
+  .photo-container {
+    position: relative;
+    padding: 8px;
+    .photo-image {
+      border-radius: 8px;
+      display: inline-block;
+      background-image: url(../assets/images/teaching-tomster.png);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 100%;
+      position: relative;
+      &::before {
+        display: block;
+        content: "";
+        padding-bottom: 100%;
+      }
+    }
+  }
+}

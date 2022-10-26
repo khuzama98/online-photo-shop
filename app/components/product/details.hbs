@@ -1,0 +1,36 @@
+<div class="product-details">
+
+  <!-- Item Header -->
+  <section>
+    <h3>{{@product.author}}</h3>
+  </section>
+  <section>
+    <p class="small text-black-50">{{@product.width}}x{{@product.height}}</p>
+  </section>
+  <!-- Price -->
+  <h4>
+    <p class="small text-black-50">{{currency @price}}</p>
+
+  </h4>
+
+  <!-- Actions -->
+  <section class="d-flex justify-content-between align-items-end">
+    <div>
+      <h5>Resolution</h5>
+      <div class="product-res">
+        {{#each this.resolutions as |res|}}
+          <span
+            class="res-span {{if (eq @res res.name) 'res-active'}}"
+            {{on "click" (fn @resChanged res.name res.price)}}
+          >{{res.name}}</span>
+        {{/each}}
+      </div>
+    </div>
+    <div>
+      <button type="button" class="btn btn-info" {{on "click" this.addToCart}}>
+        <i class="fa fa-shopping-cart mr-1" aria-hidden="true"></i>
+        Add to cart
+      </button>
+    </div>
+  </section>
+</div>
